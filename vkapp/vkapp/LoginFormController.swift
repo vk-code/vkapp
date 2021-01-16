@@ -18,8 +18,12 @@ class LoginFormController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addKeyboardObservers()
         addTapGestureRecognizer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addKeyboardObservers()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

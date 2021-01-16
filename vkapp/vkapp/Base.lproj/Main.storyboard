@@ -81,7 +81,7 @@
                                     <constraint firstItem="QEo-qW-wqU" firstAttribute="top" secondItem="R20-Xi-fg8" secondAttribute="top" constant="70" id="V68-R9-KWr">
                                         <variation key="heightClass=compact" constant="35"/>
                                     </constraint>
-                                    <constraint firstItem="qTd-bD-mCr" firstAttribute="bottom" secondItem="R20-Xi-fg8" secondAttribute="bottom" constant="-20" id="Ye4-2Y-8TG"/>
+                                    <constraint firstItem="qTd-bD-mCr" firstAttribute="bottom" secondItem="R20-Xi-fg8" secondAttribute="bottom" constant="-50" id="Ye4-2Y-8TG"/>
                                     <constraint firstItem="dhj-Ej-4rs" firstAttribute="top" secondItem="QEo-qW-wqU" secondAttribute="bottom" constant="70" id="ZgQ-5z-Bwu">
                                         <variation key="heightClass=compact" constant="35"/>
                                     </constraint>
