@@ -13,6 +13,7 @@
 		CE01276425AF0FE200BA40FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE01276325AF0FE200BA40FA /* Assets.xcassets */; };
 		CE01276725AF0FE200BA40FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE01276525AF0FE200BA40FA /* LaunchScreen.storyboard */; };
 		CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01279925AF4E2A00BA40FA /* LoginFormController.swift */; };
+		CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE01276625AF0FE200BA40FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE01276825AF0FE200BA40FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE01279925AF4E2A00BA40FA /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CE01276325AF0FE200BA40FA /* Assets.xcassets */,
 				CE01276825AF0FE200BA40FA /* Info.plist */,
 				CE01279925AF4E2A00BA40FA /* LoginFormController.swift */,
+				CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */,
 			);
 			path = vkapp;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */,
+				CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */,
 				CE01275B25AF0FE100BA40FA /* AppDelegate.swift in Sources */,
 				CE01275D25AF0FE100BA40FA /* SceneDelegate.swift in Sources */,
 			);

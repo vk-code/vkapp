@@ -79,13 +79,34 @@ class LoginFormController: UIViewController {
         view.endEditing(true)
     }
     
-    // Кнопка Войти
-    @IBAction func signInTap(_ sender: Any) {
-        guard let login = loginInput?.text else { return }
-        guard let passw = passwordInput?.text else { return }
+    // Авторизация
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if !login.isEmpty && !passw.isEmpty {
-            print("login: \(login). Password: \(passw)")
+        let auth = checkAuth()
+        
+        if !auth {
+            showLoginError()
         }
+        
+        return auth
+    }
+    
+    // Проверка логина и пароля
+    private func checkAuth() -> Bool {
+        guard let login = loginInput?.text,
+              let passw = passwordInput?.text
+        else { return false }
+        
+        // Позже прикрутим логику с реальными данными
+        return !login.isEmpty && !passw.isEmpty ? true : false
+    }
+    
+    // Сообщение об ошибке
+    private func showLoginError() {
+        let alert = UIAlertController(title: "Ошибка", message: "Неправильный логин или пароль", preferredStyle: .alert)
+        let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
