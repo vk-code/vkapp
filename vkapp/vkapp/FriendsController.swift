@@ -30,6 +30,7 @@ class FriendsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "user", for: indexPath)
         cell.textLabel?.text = friendsList[indexPath.row]
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
