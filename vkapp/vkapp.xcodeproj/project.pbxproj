@@ -14,6 +14,14 @@
 		CE01276725AF0FE200BA40FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE01276525AF0FE200BA40FA /* LaunchScreen.storyboard */; };
 		CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01279925AF4E2A00BA40FA /* LoginFormController.swift */; };
 		CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */; };
+		CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */; };
+		CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA2C25BDF298007CA492 /* UserController.swift */; };
+		CECBAA3125BDF2AF007CA492 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA3025BDF2AF007CA492 /* UserCell.swift */; };
+		CECBAA4325BE04B5007CA492 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA4225BE04B5007CA492 /* User.swift */; };
+		CECBAA4725BE04C5007CA492 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA4625BE04C5007CA492 /* Group.swift */; };
+		CECBAA4C25BE2F97007CA492 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA4B25BE2F97007CA492 /* GroupsController.swift */; };
+		CECBAA5025BE30D3007CA492 /* GroupTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA4F25BE30D3007CA492 /* GroupTableCell.swift */; };
+		CECBAA5325BE35B1007CA492 /* FindGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA5225BE35B1007CA492 /* FindGroupsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		CE01276825AF0FE200BA40FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE01279925AF4E2A00BA40FA /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
+		CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableCell.swift; sourceTree = "<group>"; };
+		CECBAA2C25BDF298007CA492 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = vkapp/UserController.swift; sourceTree = SOURCE_ROOT; };
+		CECBAA3025BDF2AF007CA492 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = vkapp/User/UserCell.swift; sourceTree = SOURCE_ROOT; };
+		CECBAA4225BE04B5007CA492 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = vkapp/User.swift; sourceTree = SOURCE_ROOT; };
+		CECBAA4625BE04C5007CA492 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Group.swift; path = vkapp/Group.swift; sourceTree = SOURCE_ROOT; };
+		CECBAA4B25BE2F97007CA492 /* GroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = vkapp/GroupsController.swift; sourceTree = SOURCE_ROOT; };
+		CECBAA4F25BE30D3007CA492 /* GroupTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupTableCell.swift; path = vkapp/Groups/GroupTableCell.swift; sourceTree = SOURCE_ROOT; };
+		CECBAA5225BE35B1007CA492 /* FindGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FindGroupsController.swift; path = vkapp/FindGroupsController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +81,49 @@
 				CE01276325AF0FE200BA40FA /* Assets.xcassets */,
 				CE01276825AF0FE200BA40FA /* Info.plist */,
 				CE01279925AF4E2A00BA40FA /* LoginFormController.swift */,
-				CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */,
+				CECBAA4125BE0499007CA492 /* Model */,
+				CECBAA2B25BDF27C007CA492 /* User */,
+				CECBAA2625BDE32D007CA492 /* Friends */,
+				CECBAA3325BE0142007CA492 /* Groups */,
 			);
 			path = vkapp;
+			sourceTree = "<group>";
+		};
+		CECBAA2625BDE32D007CA492 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */,
+				CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		CECBAA2B25BDF27C007CA492 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CECBAA3025BDF2AF007CA492 /* UserCell.swift */,
+				CECBAA2C25BDF298007CA492 /* UserController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CECBAA3325BE0142007CA492 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				CECBAA4F25BE30D3007CA492 /* GroupTableCell.swift */,
+				CECBAA4B25BE2F97007CA492 /* GroupsController.swift */,
+				CECBAA5225BE35B1007CA492 /* FindGroupsController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		CECBAA4125BE0499007CA492 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CECBAA4225BE04B5007CA492 /* User.swift */,
+				CECBAA4625BE04C5007CA492 /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,10 +196,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */,
+				CECBAA4C25BE2F97007CA492 /* GroupsController.swift in Sources */,
 				CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */,
+				CECBAA4725BE04C5007CA492 /* Group.swift in Sources */,
+				CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */,
 				CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */,
 				CE01275B25AF0FE100BA40FA /* AppDelegate.swift in Sources */,
+				CECBAA5025BE30D3007CA492 /* GroupTableCell.swift in Sources */,
+				CECBAA5325BE35B1007CA492 /* FindGroupsController.swift in Sources */,
 				CE01275D25AF0FE100BA40FA /* SceneDelegate.swift in Sources */,
+				CECBAA3125BDF2AF007CA492 /* UserCell.swift in Sources */,
+				CECBAA4325BE04B5007CA492 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
