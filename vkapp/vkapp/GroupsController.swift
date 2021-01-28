@@ -56,4 +56,9 @@ class GroupsController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let findGroupsVC = segue.destination as? FindGroupsController else { return }
+        findGroupsVC.groups = findGroupsVC.groups.filter { !userGroups.contains($0) }
+    }
 }
