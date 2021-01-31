@@ -34,12 +34,12 @@ class FriendsController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCellCustom", for: indexPath)
         guard let friendCell = cell as? FriendsTableCell else { return cell }
         
         let friendData = friendsList[indexPath.row]
         friendCell.name?.text = friendData.name
-        friendCell.photo?.image = friendData.photo
+        friendCell.avatar?.setPhoto(friendData.photo)
         
         return friendCell
     }
@@ -48,12 +48,12 @@ class FriendsController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let userVC = segue.destination as? UserController else { return }
-        guard let selectedRow = tableView.indexPathForSelectedRow else { return }
-        
-        if let photo = friendsList[selectedRow.row].photo {
-            userVC.userPhoto = photo
-        }
+//        guard let userVC = segue.destination as? UserController else { return }
+//        guard let selectedRow = tableView.indexPathForSelectedRow else { return }
+//
+//        if let photo = friendsList[selectedRow.row].photo {
+//            userVC.userPhoto = photo
+//        }
     }
     
 

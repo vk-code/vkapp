@@ -14,6 +14,7 @@
 		CE01276725AF0FE200BA40FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE01276525AF0FE200BA40FA /* LaunchScreen.storyboard */; };
 		CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01279925AF4E2A00BA40FA /* LoginFormController.swift */; };
 		CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */; };
+		CEA6C20925C6B6B500AAD6F1 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6C20825C6B6B500AAD6F1 /* LikeControl.swift */; };
 		CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */; };
 		CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA2C25BDF298007CA492 /* UserController.swift */; };
 		CECBAA3125BDF2AF007CA492 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA3025BDF2AF007CA492 /* UserCell.swift */; };
@@ -22,6 +23,7 @@
 		CECBAA4C25BE2F97007CA492 /* GroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA4B25BE2F97007CA492 /* GroupsController.swift */; };
 		CECBAA5025BE30D3007CA492 /* GroupTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA4F25BE30D3007CA492 /* GroupTableCell.swift */; };
 		CECBAA5325BE35B1007CA492 /* FindGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA5225BE35B1007CA492 /* FindGroupsController.swift */; };
+		CED2261E25C3133D00F10400 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2261D25C3133D00F10400 /* AvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		CE01276825AF0FE200BA40FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE01279925AF4E2A00BA40FA /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
+		CEA6C20825C6B6B500AAD6F1 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableCell.swift; sourceTree = "<group>"; };
 		CECBAA2C25BDF298007CA492 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = vkapp/UserController.swift; sourceTree = SOURCE_ROOT; };
 		CECBAA3025BDF2AF007CA492 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = vkapp/User/UserCell.swift; sourceTree = SOURCE_ROOT; };
@@ -42,6 +45,7 @@
 		CECBAA4B25BE2F97007CA492 /* GroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupsController.swift; path = vkapp/GroupsController.swift; sourceTree = SOURCE_ROOT; };
 		CECBAA4F25BE30D3007CA492 /* GroupTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupTableCell.swift; path = vkapp/Groups/GroupTableCell.swift; sourceTree = SOURCE_ROOT; };
 		CECBAA5225BE35B1007CA492 /* FindGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FindGroupsController.swift; path = vkapp/FindGroupsController.swift; sourceTree = SOURCE_ROOT; };
+		CED2261D25C3133D00F10400 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 			children = (
 				CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */,
 				CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */,
+				CED2261D25C3133D00F10400 /* AvatarView.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			children = (
 				CECBAA3025BDF2AF007CA492 /* UserCell.swift */,
 				CECBAA2C25BDF298007CA492 /* UserController.swift */,
+				CEA6C20825C6B6B500AAD6F1 /* LikeControl.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -198,8 +204,10 @@
 			files = (
 				CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */,
 				CECBAA4C25BE2F97007CA492 /* GroupsController.swift in Sources */,
+				CEA6C20925C6B6B500AAD6F1 /* LikeControl.swift in Sources */,
 				CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */,
 				CECBAA4725BE04C5007CA492 /* Group.swift in Sources */,
+				CED2261E25C3133D00F10400 /* AvatarView.swift in Sources */,
 				CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */,
 				CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */,
 				CE01275B25AF0FE100BA40FA /* AppDelegate.swift in Sources */,

@@ -9,13 +9,11 @@ import UIKit
 
 class FriendsTableCell: UITableViewCell {
 
-    @IBOutlet var photo: UIImageView?
     @IBOutlet var name: UILabel?
+    @IBOutlet var avatar: AvatarView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        photo?.layer.cornerRadius = 25
-        photo?.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -10,4 +10,5 @@ import UIKit
 class UserCell: UICollectionViewCell {
     
     @IBOutlet var photo: UIImageView?
+    @IBOutlet var likeControl: LikeControl?
 }

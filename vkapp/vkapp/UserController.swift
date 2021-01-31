@@ -10,7 +10,7 @@ import UIKit
 class UserController: UICollectionViewController {
     
     private let reuseIdentifier = "userCell"
-    var userPhoto: UIImage?
+    private let photos = ["Joey", "Rachel", "Monica", "Chandler", "Ross", "Phoebe"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +24,24 @@ class UserController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         guard let userCell = cell as? UserCell else { return cell }
         
-        if let photo = userPhoto {
-            userCell.photo?.image = photo
-        }
+        userCell.photo?.image = UIImage(named: photos[indexPath.row])
         
         return userCell
     }
 
+}
+
+
+extension UserController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.width)
+    }
 }
