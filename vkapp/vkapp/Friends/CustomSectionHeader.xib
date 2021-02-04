@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="abi-Aj-1Md" customClass="CustomSectionHeader" customModule="vkapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iO-H6-0I2">
+                    <rect key="frame" x="10" y="0.0" width="394" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="jwe-as-0g7"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4iO-H6-0I2" secondAttribute="trailing" constant="10" id="L0B-Cl-hI0"/>
+                <constraint firstItem="4iO-H6-0I2" firstAttribute="top" secondItem="abi-Aj-1Md" secondAttribute="top" id="Ufa-dB-KZx"/>
+                <constraint firstItem="jwe-as-0g7" firstAttribute="bottom" secondItem="4iO-H6-0I2" secondAttribute="bottom" id="Yue-Jk-hoX"/>
+                <constraint firstItem="4iO-H6-0I2" firstAttribute="leading" secondItem="abi-Aj-1Md" secondAttribute="leading" constant="10" id="mnF-xl-jtg"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelView" destination="4iO-H6-0I2" id="Y0B-A4-82z"/>
+            </connections>
+            <point key="canvasLocation" x="-671.01449275362324" y="65.625"/>
+        </view>
+    </objects>
+</document>

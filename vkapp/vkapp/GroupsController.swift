@@ -9,10 +9,14 @@ import UIKit
 
 class GroupsController: UITableViewController {
 
+    @IBOutlet var searchBar: UISearchBar?
+    
     var userGroups = [Group]()
+    var filteredUserGroups = [Group]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filteredUserGroups = userGroups
     }
 
     // MARK: - Table view data source
@@ -22,7 +26,7 @@ class GroupsController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userGroups.count
+        return filteredUserGroups.count
     }
 
     
@@ -30,7 +34,7 @@ class GroupsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
         guard let groupCell = cell as? GroupTableCell else { return cell }
         
-        let groupData = userGroups[indexPath.row]
+        let groupData = filteredUserGroups[indexPath.row]
         groupCell.name?.text = groupData.name
         groupCell.picture?.image = groupData.image
         groupCell.selectionStyle = .none
@@ -46,6 +50,7 @@ class GroupsController: UITableViewController {
         
         if !userGroups.contains(group) {
             userGroups.append(group)
+            filteredUserGroups = userGroups
             tableView.reloadData()
         }
     }
@@ -53,12 +58,24 @@ class GroupsController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             userGroups.remove(at: indexPath.row)
+            filteredUserGroups = userGroups
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let findGroupsVC = segue.destination as? FindGroupsController else { return }
-        findGroupsVC.groups = findGroupsVC.groups.filter { !userGroups.contains($0) }
+        findGroupsVC.groupsArr = findGroupsVC.groupsArr.filter { !userGroups.contains($0) }
+    }
+}
+
+
+extension GroupsController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredUserGroups = searchText.isEmpty ? userGroups : userGroups.filter({ element in
+            return element.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        })
+        tableView.reloadData()
     }
 }

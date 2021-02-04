@@ -11,6 +11,10 @@ struct User {
     
     let name: String
     let photo: UIImage?
+    var firstNameLetter: String {
+        return String(name.prefix(1))
+    }
+    var presentedInTable = false
     
     init(name: String) {
         self.name = name

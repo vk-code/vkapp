@@ -11,9 +11,9 @@ import UIKit
 
     private var stackView = UIStackView()
     private var likeText: String {
-        return "Нравится: \(likesCount)"
+        return "\(likesCount)"
     }
-    private var likesCount: Int = 0 {
+    var likesCount: Int = 0 {
         didSet {
             self.sendActions(for: .valueChanged)
         }

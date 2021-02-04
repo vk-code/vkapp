@@ -9,7 +9,9 @@ import UIKit
 
 class FindGroupsController: UITableViewController {
 
-    var groups: [Group] = [
+    @IBOutlet var searchBar: UISearchBar?
+    
+    var groupsArr: [Group] = [
         Group(name: "Актёрское мастерство", image: "acting"),
         Group(name: "Уроки игры на гитаре", image: "guitar"),
         Group(name: "Мода", image: "fashion"),
@@ -17,9 +19,11 @@ class FindGroupsController: UITableViewController {
         Group(name: "Мужская кухня", image: "cooking"),
         Group(name: "Реклама и маркетинг", image: "marketing"),
     ]
+    var groups: [Group] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        groups = groupsArr
     }
 
     // MARK: - Table view data source
@@ -41,5 +45,16 @@ class FindGroupsController: UITableViewController {
         groupCell.picture?.image = groupData.image
         
         return groupCell
+    }
+}
+
+
+extension FindGroupsController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        groups = searchText.isEmpty ? groupsArr : groupsArr.filter({ element in
+            return element.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        })
+        tableView.reloadData()
     }
 }
