@@ -33,6 +33,9 @@ class UserController: UICollectionViewController {
         
         userCell.photo?.image = UIImage(named: photos[indexPath.row])
         
+        // MARK: TO DO
+        // для каждой ячейки нужно запоминать, нажат ли на ней лайк и в cellForItemAt выставлять этому контролу запомненное состояние
+        
         return userCell
     }
 
@@ -40,7 +43,7 @@ class UserController: UICollectionViewController {
 
 
 extension UserController: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.width)
     }
