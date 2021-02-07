@@ -29,7 +29,7 @@ class FriendsController: UITableViewController {
         tableView.register(UINib(nibName: "CustomSectionHeader", bundle: .main), forHeaderFooterViewReuseIdentifier: "cellHeader")
         getSections()
     }
-
+    
     
     // MARK: - Table view data source
 
@@ -62,6 +62,8 @@ class FriendsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCellCustom", for: indexPath)
         guard let friendCell = cell as? FriendsTableCell else { return cell }
+        
+        friendCell.selectionStyle = .none
         
         var userData: User?
         let nameStartsWith = sectionsList[indexPath.section]

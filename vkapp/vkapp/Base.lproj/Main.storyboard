@@ -210,7 +210,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9z7-rz-PZz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4472.3076923076924" y="502.60663507109001"/>
+            <point key="canvasLocation" x="4312" y="503"/>
         </scene>
         <!--Поиск групп-->
         <scene sceneID="1XK-U4-mab">
@@ -278,7 +278,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpZ-nd-DRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wvc-2M-Th4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5240" y="503"/>
+            <point key="canvasLocation" x="5080" y="503"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="Maa-TJ-Vns">
@@ -386,7 +386,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GnW-VH-KOH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4472.3076923076924" y="-236.01895734597156"/>
+            <point key="canvasLocation" x="4312" y="-236"/>
         </scene>
         <!--Фотографии-->
         <scene sceneID="Dn3-Te-XHi">
@@ -450,7 +450,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uml-Za-H5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5192.3076923076924" y="-236.01895734597156"/>
+            <point key="canvasLocation" x="5080" y="-236"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="NYk-6r-aau">
@@ -470,6 +470,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58I-r0-BDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3543.0769230769229" y="-236.01895734597156"/>
+        </scene>
+        <!--Loading View-->
+        <scene sceneID="nyi-TI-uDl">
+            <objects>
+                <viewController id="Mg5-46-FcW" customClass="LoadingView" customModule="vkapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FcQ-W0-amG">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-WV-XCj">
+                                <rect key="frame" x="143" y="410" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-5U-v0n">
+                                <rect key="frame" x="183" y="410" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09X-Du-T62">
+                                <rect key="frame" x="223" y="410" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LJf-US-TbZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="circle1" destination="g3g-WV-XCj" id="b6o-dD-9Ie"/>
+                        <outlet property="circle2" destination="3U8-5U-v0n" id="ZwJ-1U-q60"/>
+                        <outlet property="circle3" destination="09X-Du-T62" id="g6G-hC-aE5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKR-NV-IOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2626" y="1238"/>
         </scene>
         <!--Группы-->
         <scene sceneID="49p-X3-BoF">
@@ -641,7 +678,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHa-EW-57y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4470.7692307692305" y="1238.3886255924169"/>
+            <point key="canvasLocation" x="4312" y="1238"/>
         </scene>
         <!--Новости-->
         <scene sceneID="hWS-ST-tut">

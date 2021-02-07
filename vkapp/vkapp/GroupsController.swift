@@ -42,6 +42,7 @@ class GroupsController: UITableViewController {
         return groupCell
     }
     
+    
     @IBAction func didSelectGroup(segue: UIStoryboardSegue) {
         guard let findGroupsVC = segue.source as? FindGroupsController else { return }
         guard let selected = findGroupsVC.tableView.indexPathForSelectedRow else { return }

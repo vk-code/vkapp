@@ -38,7 +38,21 @@ class UserController: UICollectionViewController {
         
         return userCell
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        guard let userCell = cell as? UserCell else { return }
+        
+        userCell.photo?.layer.opacity = 0.3
+        userCell.photo?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+                userCell.photo?.layer.opacity = 1
+                userCell.photo?.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        }
+    }
 }
 
 

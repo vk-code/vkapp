@@ -71,6 +71,13 @@ import UIKit
         sender.isSelected = !sender.isSelected
         sender.imageView?.tintColor = tintColor
         sender.setTitle(likeText, for: uiState)
+        UIView.transition(with: sender,
+                          duration: 0.25,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            sender.setTitle(self.likeText, for: uiState)
+                          })
+
     }
     
     
