@@ -14,6 +14,7 @@
 		CE01276725AF0FE200BA40FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE01276525AF0FE200BA40FA /* LaunchScreen.storyboard */; };
 		CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01279925AF4E2A00BA40FA /* LoginFormController.swift */; };
 		CE37586E25CC3B4F00CBE5BD /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37586D25CC3B4F00CBE5BD /* News.swift */; };
+		CE6B1DE425D556CB002E6EDF /* ImageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */; };
 		CE6CC77D25D023C000161A84 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CC77C25D023C000161A84 /* LoadingView.swift */; };
 		CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */; };
 		CE830BB225CC244900DC2BD9 /* CustomSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE830BB125CC244900DC2BD9 /* CustomSectionHeader.xib */; };
@@ -42,6 +43,7 @@
 		CE01276825AF0FE200BA40FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE01279925AF4E2A00BA40FA /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		CE37586D25CC3B4F00CBE5BD /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewController.swift; sourceTree = "<group>"; };
 		CE6CC77C25D023C000161A84 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CE7ADC1325B3186A0067F5B7 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		CE830BB125CC244900DC2BD9 /* CustomSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSectionHeader.xib; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				CECBAA2625BDE32D007CA492 /* Friends */,
 				CECBAA3325BE0142007CA492 /* Groups */,
 				CE6CC77C25D023C000161A84 /* LoadingView.swift */,
+				CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */,
 			);
 			path = vkapp;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */,
 				CECBAA4C25BE2F97007CA492 /* GroupsController.swift in Sources */,
+				CE6B1DE425D556CB002E6EDF /* ImageGalleryViewController.swift in Sources */,
 				CEA6C20925C6B6B500AAD6F1 /* LikeControl.swift in Sources */,
 				CE830BC225CC38AD00DC2BD9 /* NewsTableCell.swift in Sources */,
 				CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */,

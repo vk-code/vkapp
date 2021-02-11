@@ -10,10 +10,11 @@ import UIKit
 class UserController: UICollectionViewController {
     
     private let reuseIdentifier = "userCell"
-    private let photos = ["Joey", "Rachel", "Monica", "Chandler", "Ross", "Phoebe"]
+    private var photos = ["Joey", "Rachel", "Monica", "Chandler", "Ross", "Phoebe"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        photos.shuffle()
     }
 
     // MARK: UICollectionViewDataSource
@@ -32,6 +33,10 @@ class UserController: UICollectionViewController {
         guard let userCell = cell as? UserCell else { return cell }
         
         userCell.photo?.image = UIImage(named: photos[indexPath.row])
+        userCell.photo?.isUserInteractionEnabled = true
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(showGallery(_:)))
+        userCell.addGestureRecognizer(recognizer)
         
         // MARK: TO DO
         // для каждой ячейки нужно запоминать, нажат ли на ней лайк и в cellForItemAt выставлять этому контролу запомненное состояние
@@ -52,6 +57,26 @@ class UserController: UICollectionViewController {
                 userCell.photo?.transform = CGAffineTransform(scaleX: 1, y: 1)
             })
         }
+    }
+    
+    
+    @objc func showGallery(_ recognizer: UITapGestureRecognizer) {
+        
+        guard let UserVC = recognizer.view as? UserCell else { return }
+        
+        let galleryVC = ImageGalleryViewController()
+        
+        for (i, imgName) in photos.enumerated() {
+            if let image = UIImage(named: imgName) {
+                galleryVC.images.append(image)
+                
+                if image == UserVC.photo?.image {
+                    galleryVC.currentImage = i
+                }
+            }
+        }
+        present(galleryVC, animated: true, completion: nil)
+//        navigationController?.pushViewController(galleryVC, animated: true)
     }
 }
 
