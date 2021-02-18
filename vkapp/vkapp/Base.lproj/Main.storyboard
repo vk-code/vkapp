@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1LV-7G-BPG">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -455,7 +455,7 @@
         <!--Друзья-->
         <scene sceneID="NYk-6r-aau">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nj8-OQ-LsF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nj8-OQ-LsF" customClass="CustomNavigationController" customModule="vkapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.fill" catalog="system" id="rVh-0p-0nV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LOV-hT-pzu">
@@ -511,7 +511,7 @@
         <!--Группы-->
         <scene sceneID="49p-X3-BoF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fEA-Wp-Tc0" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fEA-Wp-Tc0" customClass="CustomNavigationController" customModule="vkapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="person.2.fill" catalog="system" id="MGn-C5-3sv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DPe-Ua-keC">

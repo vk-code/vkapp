@@ -11,7 +11,8 @@ class UserController: UICollectionViewController {
     
     private let reuseIdentifier = "userCell"
     private var photos = ["Joey", "Rachel", "Monica", "Chandler", "Ross", "Phoebe"]
-
+    private lazy var transitioningAnimator = GalleryTransitionAnimatorDelegateImp()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         photos.shuffle()
@@ -59,7 +60,6 @@ class UserController: UICollectionViewController {
         }
     }
     
-    
     @objc func showGallery(_ recognizer: UITapGestureRecognizer) {
         
         guard let UserVC = recognizer.view as? UserCell else { return }
@@ -67,6 +67,7 @@ class UserController: UICollectionViewController {
         let galleryVC = ImageGalleryViewController()
         
         for (i, imgName) in photos.enumerated() {
+            
             if let image = UIImage(named: imgName) {
                 galleryVC.images.append(image)
                 
@@ -75,8 +76,42 @@ class UserController: UICollectionViewController {
                 }
             }
         }
+        
+//        galleryVC.modalPresentationStyle = .custom
+        let recognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
+        recognizer.edges = [.top]
+        galleryVC.view.addGestureRecognizer(recognizer)
+        galleryVC.transitioningDelegate = transitioningAnimator
+        
         present(galleryVC, animated: true, completion: nil)
 //        navigationController?.pushViewController(galleryVC, animated: true)
+    }
+    
+    @objc func handlePanGesture(recognizer: UIScreenEdgePanGestureRecognizer) {
+        
+        switch recognizer.state {
+        case .began:
+            self.dismiss(animated: true, completion: nil)
+             
+        case .changed:
+            let location = recognizer.translation(in: recognizer.view)
+            let estimatedProgress = abs(location.y / 550)
+            let progress = min(max(estimatedProgress, 0.01), 0.99)
+            transitioningAnimator.dismissInteractionController.update(progress)
+            
+        case .cancelled, .failed:
+            transitioningAnimator.dismissInteractionController.cancel()
+            
+        case .ended:
+            if abs(recognizer.translation(in: recognizer.view).y) < 100 {
+                transitioningAnimator.dismissInteractionController.cancel()
+            } else {
+                transitioningAnimator.dismissInteractionController.finish()
+            }
+            
+        default:
+            break
+        }
     }
 }
 

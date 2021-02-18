@@ -21,6 +21,9 @@
 		CE830BB525CC259B00DC2BD9 /* CustomSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE830BB425CC259B00DC2BD9 /* CustomSectionHeader.swift */; };
 		CE830BB925CC300600DC2BD9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE830BB825CC300600DC2BD9 /* NewsViewController.swift */; };
 		CE830BC225CC38AD00DC2BD9 /* NewsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE830BC125CC38AD00DC2BD9 /* NewsTableCell.swift */; };
+		CEA476BD25DDC10C00918D18 /* CustomAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA476BC25DDC10C00918D18 /* CustomAnimations.swift */; };
+		CEA476C225DDCFDA00918D18 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA476C125DDCFDA00918D18 /* CustomNavigationController.swift */; };
+		CEA476C625DDEA1000918D18 /* GalleryTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA476C525DDEA1000918D18 /* GalleryTransition.swift */; };
 		CEA6C20925C6B6B500AAD6F1 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6C20825C6B6B500AAD6F1 /* LikeControl.swift */; };
 		CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */; };
 		CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA2C25BDF298007CA492 /* UserController.swift */; };
@@ -50,6 +53,9 @@
 		CE830BB425CC259B00DC2BD9 /* CustomSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSectionHeader.swift; sourceTree = "<group>"; };
 		CE830BB825CC300600DC2BD9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		CE830BC125CC38AD00DC2BD9 /* NewsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableCell.swift; sourceTree = "<group>"; };
+		CEA476BC25DDC10C00918D18 /* CustomAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimations.swift; sourceTree = "<group>"; };
+		CEA476C125DDCFDA00918D18 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		CEA476C525DDEA1000918D18 /* GalleryTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTransition.swift; sourceTree = "<group>"; };
 		CEA6C20825C6B6B500AAD6F1 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		CECBAA2325BDE329007CA492 /* FriendsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableCell.swift; sourceTree = "<group>"; };
 		CECBAA2C25BDF298007CA492 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = vkapp/UserController.swift; sourceTree = SOURCE_ROOT; };
@@ -92,6 +98,7 @@
 		CE01275925AF0FE100BA40FA /* vkapp */ = {
 			isa = PBXGroup;
 			children = (
+				CEA476BF25DDCEE900918D18 /* Transitions */,
 				CE01275A25AF0FE100BA40FA /* AppDelegate.swift */,
 				CE01275C25AF0FE100BA40FA /* SceneDelegate.swift */,
 				CE01276025AF0FE100BA40FA /* Main.storyboard */,
@@ -117,6 +124,16 @@
 				CE830BC125CC38AD00DC2BD9 /* NewsTableCell.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		CEA476BF25DDCEE900918D18 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				CEA476BC25DDC10C00918D18 /* CustomAnimations.swift */,
+				CEA476C125DDCFDA00918D18 /* CustomNavigationController.swift */,
+				CEA476C525DDEA1000918D18 /* GalleryTransition.swift */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		CECBAA2625BDE32D007CA492 /* Friends */ = {
@@ -232,12 +249,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA476C225DDCFDA00918D18 /* CustomNavigationController.swift in Sources */,
 				CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */,
 				CECBAA4C25BE2F97007CA492 /* GroupsController.swift in Sources */,
 				CE6B1DE425D556CB002E6EDF /* ImageGalleryViewController.swift in Sources */,
 				CEA6C20925C6B6B500AAD6F1 /* LikeControl.swift in Sources */,
+				CEA476BD25DDC10C00918D18 /* CustomAnimations.swift in Sources */,
 				CE830BC225CC38AD00DC2BD9 /* NewsTableCell.swift in Sources */,
 				CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */,
+				CEA476C625DDEA1000918D18 /* GalleryTransition.swift in Sources */,
 				CECBAA4725BE04C5007CA492 /* Group.swift in Sources */,
 				CED2261E25C3133D00F10400 /* AvatarView.swift in Sources */,
 				CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */,
