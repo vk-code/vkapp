@@ -38,7 +38,16 @@ class CustomLoginViewController: UIViewController {
     }
     
     
-    func vkRequest(method: String, _ apiParams: Parameters) {
+    func vkRequest(method: String, additionalParams: Parameters?) {
+        
+        var apiParams: Parameters = [
+            "access_token": Session.shared.token,
+            "v": "5.130",
+        ]
+        
+        if let additionalParams = additionalParams {
+            apiParams = apiParams.merging(additionalParams) { current, _ in current }
+        }
         
         AF.request("https://api.vk.com/method/\(method)", method: .get, parameters: apiParams).responseJSON { response in
             switch response.result {
@@ -77,17 +86,17 @@ extension CustomLoginViewController: WKNavigationDelegate {
             return
         }
         
-        var apiParams: Parameters = [
-            "access_token": token,
-            "v": "5.130",
-        ]
+        Session.shared.userId = Int(userId)!
+        Session.shared.token = token
         
-        // Список друзей
-        self.vkRequest(method: "friends.get", apiParams)
-        self.vkRequest(method: "photos.get", apiParams)
-        self.vkRequest(method: "groups.get", apiParams)
-        apiParams["q"] = "ios";
-        self.vkRequest(method: "groups.search", apiParams)
+        self.vkRequest(method: "friends.get", additionalParams: nil)
+        self.vkRequest(method: "photos.get", additionalParams: nil)
+        self.vkRequest(method: "groups.get", additionalParams: nil)
+
+        let searchParams: Parameters = [
+            "q": "Travis Rice",
+        ]
+        self.vkRequest(method: "groups.search", additionalParams: searchParams)
         
         decisionHandler(.cancel)
     }

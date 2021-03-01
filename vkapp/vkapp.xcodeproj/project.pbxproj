@@ -36,6 +36,7 @@
 		CECBAA5325BE35B1007CA492 /* FindGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBAA5225BE35B1007CA492 /* FindGroupsController.swift */; };
 		CED2261E25C3133D00F10400 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2261D25C3133D00F10400 /* AvatarView.swift */; };
 		CEFC48D225ED7C4A00929971 /* CustomLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC48D125ED7C4A00929971 /* CustomLoginViewController.swift */; };
+		CEFC48DD25ED97A700929971 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC48DC25ED97A700929971 /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		CECBAA5225BE35B1007CA492 /* FindGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FindGroupsController.swift; path = vkapp/FindGroupsController.swift; sourceTree = SOURCE_ROOT; };
 		CED2261D25C3133D00F10400 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		CEFC48D125ED7C4A00929971 /* CustomLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginViewController.swift; sourceTree = "<group>"; };
+		CEFC48DC25ED97A700929971 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F5BC1A0ADB94CBDF01F90124 /* Pods_vkapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vkapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 				CE6CC77C25D023C000161A84 /* LoadingView.swift */,
 				CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */,
 				CEFC48D125ED7C4A00929971 /* CustomLoginViewController.swift */,
+				CEFC48DC25ED97A700929971 /* Session.swift */,
 			);
 			path = vkapp;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */,
 				CEA476C625DDEA1000918D18 /* GalleryTransition.swift in Sources */,
 				CECBAA4725BE04C5007CA492 /* Group.swift in Sources */,
+				CEFC48DD25ED97A700929971 /* Session.swift in Sources */,
 				CED2261E25C3133D00F10400 /* AvatarView.swift in Sources */,
 				CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */,
 				CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */,
