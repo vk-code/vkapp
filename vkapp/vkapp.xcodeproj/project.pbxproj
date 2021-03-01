@@ -14,7 +14,6 @@
 		CE01276425AF0FE200BA40FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE01276325AF0FE200BA40FA /* Assets.xcassets */; };
 		CE01276725AF0FE200BA40FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE01276525AF0FE200BA40FA /* LaunchScreen.storyboard */; };
 		CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01279925AF4E2A00BA40FA /* LoginFormController.swift */; };
-		CE11C0FD25E539DE002FEA1B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE11C0FC25E539DE002FEA1B /* Session.swift */; };
 		CE37586E25CC3B4F00CBE5BD /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37586D25CC3B4F00CBE5BD /* News.swift */; };
 		CE6B1DE425D556CB002E6EDF /* ImageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */; };
 		CE6CC77D25D023C000161A84 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CC77C25D023C000161A84 /* LoadingView.swift */; };
@@ -50,7 +49,6 @@
 		CE01276625AF0FE200BA40FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE01276825AF0FE200BA40FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE01279925AF4E2A00BA40FA /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
-		CE11C0FC25E539DE002FEA1B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CE37586D25CC3B4F00CBE5BD /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewController.swift; sourceTree = "<group>"; };
 		CE6CC77C25D023C000161A84 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 				CE6CC77C25D023C000161A84 /* LoadingView.swift */,
 				CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */,
 				CEFC48D125ED7C4A00929971 /* CustomLoginViewController.swift */,
-				CE11C0FC25E539DE002FEA1B /* Session.swift */,
 			);
 			path = vkapp;
 			sourceTree = "<group>";
@@ -184,7 +181,6 @@
 				CECBAA3025BDF2AF007CA492 /* UserCell.swift */,
 				CECBAA2C25BDF298007CA492 /* UserController.swift */,
 				CEA6C20825C6B6B500AAD6F1 /* LikeControl.swift */,
-				CE6B1DE325D556CB002E6EDF /* ImageGalleryViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -341,7 +337,6 @@
 				CECBAA5025BE30D3007CA492 /* GroupTableCell.swift in Sources */,
 				CECBAA5325BE35B1007CA492 /* FindGroupsController.swift in Sources */,
 				CE37586E25CC3B4F00CBE5BD /* News.swift in Sources */,
-				CE11C0FD25E539DE002FEA1B /* Session.swift in Sources */,
 				CE01275D25AF0FE100BA40FA /* SceneDelegate.swift in Sources */,
 				CE830BB525CC259B00DC2BD9 /* CustomSectionHeader.swift in Sources */,
 				CECBAA3125BDF2AF007CA492 /* UserCell.swift in Sources */,
