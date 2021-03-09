@@ -9,6 +9,7 @@ import UIKit
 
 struct User {
     
+    let id: Int
     let name: String
     let photo: UIImage?
     var firstNameLetter: String {
@@ -16,10 +17,14 @@ struct User {
     }
     var presentedInTable = false
     
-    init(name: String) {
+    init(id: Int, name: String, photoUrl: String) {
+        self.id = id
         self.name = name
         
-        if let newPhoto = UIImage(named: name) {
+        let url = URL(string: photoUrl)
+        let data = try? Data(contentsOf: url!)
+        
+        if let data = data, let newPhoto = UIImage(data: data) {
             self.photo = newPhoto
         } else {
             self.photo = UIImage(named: "nophoto")

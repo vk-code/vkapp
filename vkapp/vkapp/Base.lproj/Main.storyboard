@@ -121,7 +121,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="K5e-tu-XmN">
             <objects>
-                <tabBarController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="1LV-7G-BPG" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabController" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="1LV-7G-BPG" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="O0c-5u-fmK"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kss-IQ-Wsf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -503,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5J-LF-oCP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="1233"/>
+            <point key="canvasLocation" x="982" y="192"/>
         </scene>
         <!--Loading View-->
         <scene sceneID="nyi-TI-uDl">

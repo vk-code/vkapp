@@ -16,7 +16,28 @@ class GroupsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filteredUserGroups = userGroups
+//        filteredUserGroups = userGroups
+        
+        GroupsService.getGroups { (result, error) in
+            if let error = error {
+                let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+            if let result = result?.response.items {
+                for row in result {
+                    let groupRow = Group(name: row.name, imageUrl: row.photo)
+                    self.userGroups.append(groupRow)
+                }
+
+                DispatchQueue.main.async {
+                    self.filteredUserGroups = self.userGroups
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source

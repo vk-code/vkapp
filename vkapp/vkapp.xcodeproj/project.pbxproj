@@ -37,6 +37,14 @@
 		CED2261E25C3133D00F10400 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2261D25C3133D00F10400 /* AvatarView.swift */; };
 		CEFC48D225ED7C4A00929971 /* CustomLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC48D125ED7C4A00929971 /* CustomLoginViewController.swift */; };
 		CEFC48DD25ED97A700929971 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC48DC25ED97A700929971 /* Session.swift */; };
+		CEFF3E2425F6B616003FA167 /* VKMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E2325F6B616003FA167 /* VKMethods.swift */; };
+		CEFF3E2725F6B6B8003FA167 /* VKRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E2625F6B6B8003FA167 /* VKRequestManager.swift */; };
+		CEFF3E2C25F6BC86003FA167 /* FriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E2B25F6BC86003FA167 /* FriendsModel.swift */; };
+		CEFF3E3325F7A543003FA167 /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E3225F7A543003FA167 /* FriendsService.swift */; };
+		CEFF3E3625F7A8EE003FA167 /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E3525F7A8EE003FA167 /* GroupsService.swift */; };
+		CEFF3E3925F7A974003FA167 /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E3825F7A974003FA167 /* GroupsModel.swift */; };
+		CEFF3E3C25F7B2C5003FA167 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E3B25F7B2C5003FA167 /* UserService.swift */; };
+		CEFF3E3F25F7B36A003FA167 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF3E3E25F7B36A003FA167 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +81,14 @@
 		CED2261D25C3133D00F10400 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		CEFC48D125ED7C4A00929971 /* CustomLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginViewController.swift; sourceTree = "<group>"; };
 		CEFC48DC25ED97A700929971 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		CEFF3E2325F6B616003FA167 /* VKMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKMethods.swift; sourceTree = "<group>"; };
+		CEFF3E2625F6B6B8003FA167 /* VKRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKRequestManager.swift; sourceTree = "<group>"; };
+		CEFF3E2B25F6BC86003FA167 /* FriendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModel.swift; sourceTree = "<group>"; };
+		CEFF3E3225F7A543003FA167 /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
+		CEFF3E3525F7A8EE003FA167 /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		CEFF3E3825F7A974003FA167 /* GroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
+		CEFF3E3B25F7B2C5003FA167 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CEFF3E3E25F7B36A003FA167 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F5BC1A0ADB94CBDF01F90124 /* Pods_vkapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vkapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +142,9 @@
 		CE01275925AF0FE100BA40FA /* vkapp */ = {
 			isa = PBXGroup;
 			children = (
+				CEFF3E3125F7A52C003FA167 /* Services */,
+				CEFF3E2A25F6BC78003FA167 /* jsonModels */,
+				CEFF3E2225F6B5F8003FA167 /* NetworkLayer */,
 				CEA476BF25DDCEE900918D18 /* Transitions */,
 				CE01275A25AF0FE100BA40FA /* AppDelegate.swift */,
 				CE01275C25AF0FE100BA40FA /* SceneDelegate.swift */,
@@ -206,6 +225,35 @@
 				CE37586D25CC3B4F00CBE5BD /* News.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CEFF3E2225F6B5F8003FA167 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF3E2325F6B616003FA167 /* VKMethods.swift */,
+				CEFF3E2625F6B6B8003FA167 /* VKRequestManager.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		CEFF3E2A25F6BC78003FA167 /* jsonModels */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF3E2B25F6BC86003FA167 /* FriendsModel.swift */,
+				CEFF3E3825F7A974003FA167 /* GroupsModel.swift */,
+				CEFF3E3E25F7B36A003FA167 /* UserModel.swift */,
+			);
+			path = jsonModels;
+			sourceTree = "<group>";
+		};
+		CEFF3E3125F7A52C003FA167 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF3E3225F7A543003FA167 /* FriendsService.swift */,
+				CEFF3E3525F7A8EE003FA167 /* GroupsService.swift */,
+				CEFF3E3B25F7B2C5003FA167 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,21 +372,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA476C225DDCFDA00918D18 /* CustomNavigationController.swift in Sources */,
+				CEFF3E3625F7A8EE003FA167 /* GroupsService.swift in Sources */,
 				CECBAA2D25BDF298007CA492 /* UserController.swift in Sources */,
 				CECBAA4C25BE2F97007CA492 /* GroupsController.swift in Sources */,
 				CE6B1DE425D556CB002E6EDF /* ImageGalleryViewController.swift in Sources */,
 				CEA6C20925C6B6B500AAD6F1 /* LikeControl.swift in Sources */,
+				CEFF3E2425F6B616003FA167 /* VKMethods.swift in Sources */,
 				CEA476BD25DDC10C00918D18 /* CustomAnimations.swift in Sources */,
 				CE830BC225CC38AD00DC2BD9 /* NewsTableCell.swift in Sources */,
 				CE01279A25AF4E2A00BA40FA /* LoginFormController.swift in Sources */,
+				CEFF3E3F25F7B36A003FA167 /* UserModel.swift in Sources */,
 				CEA476C625DDEA1000918D18 /* GalleryTransition.swift in Sources */,
 				CECBAA4725BE04C5007CA492 /* Group.swift in Sources */,
 				CEFC48DD25ED97A700929971 /* Session.swift in Sources */,
+				CEFF3E3925F7A974003FA167 /* GroupsModel.swift in Sources */,
 				CED2261E25C3133D00F10400 /* AvatarView.swift in Sources */,
 				CECBAA2425BDE329007CA492 /* FriendsTableCell.swift in Sources */,
 				CE7ADC1425B3186A0067F5B7 /* FriendsController.swift in Sources */,
 				CE01275B25AF0FE100BA40FA /* AppDelegate.swift in Sources */,
 				CECBAA5025BE30D3007CA492 /* GroupTableCell.swift in Sources */,
+				CEFF3E3325F7A543003FA167 /* FriendsService.swift in Sources */,
 				CECBAA5325BE35B1007CA492 /* FindGroupsController.swift in Sources */,
 				CE37586E25CC3B4F00CBE5BD /* News.swift in Sources */,
 				CE01275D25AF0FE100BA40FA /* SceneDelegate.swift in Sources */,
@@ -347,6 +400,9 @@
 				CECBAA4325BE04B5007CA492 /* User.swift in Sources */,
 				CEFC48D225ED7C4A00929971 /* CustomLoginViewController.swift in Sources */,
 				CE6CC77D25D023C000161A84 /* LoadingView.swift in Sources */,
+				CEFF3E3C25F7B2C5003FA167 /* UserService.swift in Sources */,
+				CEFF3E2C25F6BC86003FA167 /* FriendsModel.swift in Sources */,
+				CEFF3E2725F6B6B8003FA167 /* VKRequestManager.swift in Sources */,
 				CE830BB925CC300600DC2BD9 /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

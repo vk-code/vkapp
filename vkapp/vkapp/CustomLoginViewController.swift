@@ -25,7 +25,7 @@ class CustomLoginViewController: UIViewController {
         components.host = "oauth.vk.com"
         components.path = "/authorize"
         components.queryItems = [
-            URLQueryItem(name: "client_id", value: "7777268"),
+            URLQueryItem(name: "client_id", value: "7784942"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "response_type", value: "token"),
@@ -36,28 +36,6 @@ class CustomLoginViewController: UIViewController {
         
         webView?.load(request)
     }
-    
-    
-    func vkRequest(method: String, additionalParams: Parameters?) {
-        
-        var apiParams: Parameters = [
-            "access_token": Session.shared.token,
-            "v": "5.130",
-        ]
-        
-        if let additionalParams = additionalParams {
-            apiParams = apiParams.merging(additionalParams) { current, _ in current }
-        }
-        
-        AF.request("https://api.vk.com/method/\(method)", method: .get, parameters: apiParams).responseJSON { response in
-            switch response.result {
-            case let .success(data):
-                print(data)
-            case let .failure(error):
-                print(error)
-            }
-        }
-    }
 }
 
 
@@ -66,6 +44,7 @@ extension CustomLoginViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
         guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment else {
+            
             decisionHandler(.allow)
             return
         }
@@ -89,14 +68,27 @@ extension CustomLoginViewController: WKNavigationDelegate {
         Session.shared.userId = Int(userId)!
         Session.shared.token = token
         
-        self.vkRequest(method: "friends.get", additionalParams: nil)
-        self.vkRequest(method: "photos.get", additionalParams: nil)
-        self.vkRequest(method: "groups.get", additionalParams: nil)
-
-        let searchParams: Parameters = [
-            "q": "Travis Rice",
-        ]
-        self.vkRequest(method: "groups.search", additionalParams: searchParams)
+        if let tabVC = storyboard?.instantiateViewController(withIdentifier: "mainTabController") {
+            present(tabVC, animated: true, completion: nil)
+        }
+//        let friendsRequest: Parameters = [
+//            "fields": "photo_100"
+//        ]
+////        VKRequestManager.run(method: .friendsGet, additionalParams: friendsRequest) { (t, er) in
+////            print(t)
+////        }
+//        VKRequestManager<FriendsModel>.request(method: .friendsGet, additionalParams: friendsRequest) { (test1, test2) in
+//            print(test1?.response.items)
+//        }
+        
+//        self.vkRequest(method: "friends.get", additionalParams: nil)
+//        self.vkRequest(method: "photos.get", additionalParams: nil)
+//        self.vkRequest(method: "groups.get", additionalParams: nil)
+//
+//        let searchParams: Parameters = [
+//            "q": "Travis Rice",
+//        ]
+//        self.vkRequest(method: "groups.search", additionalParams: searchParams)
         
         decisionHandler(.cancel)
     }

@@ -6,18 +6,19 @@
 //
 
 import UIKit
+import Alamofire
 
 class FriendsController: UITableViewController {
 
     @IBOutlet var searchBar: UISearchBar?
     
-    private var friendsArr = [
-        User(name: "Chandler"),
-        User(name: "Phoebe"),
-        User(name: "Rachel"),
-        User(name: "Joey"),
-        User(name: "Monica"),
-        User(name: "Ross"),
+    private var friendsArr: [User] = [
+//        User(name: "Chandler"),
+//        User(name: "Phoebe"),
+//        User(name: "Rachel"),
+//        User(name: "Joey"),
+//        User(name: "Monica"),
+//        User(name: "Ross"),
     ]
     private var friendsList = [User]()
     private var sectionsList = [String]()
@@ -25,9 +26,31 @@ class FriendsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        friendsList = friendsArr
         tableView.register(UINib(nibName: "CustomSectionHeader", bundle: .main), forHeaderFooterViewReuseIdentifier: "cellHeader")
-        getSections()
+        
+        FriendsService.getFriends { (result, error) in
+            if let error = error {
+                let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            if let users = result?.response.items {
+                for user in users {
+                    let userName = "\(user.firstName) \(user.lastName)"
+                    let userRow = User(id: user.id, name: userName, photoUrl: user.photo)
+                    self.friendsArr.append(userRow)
+                }
+
+                DispatchQueue.main.async {
+                    self.friendsList = self.friendsArr
+                    self.getSections()
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     
@@ -98,15 +121,11 @@ class FriendsController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let userVC = segue.destination as? UserController else { return }
-//        guard let selectedRow = tableView.indexPathForSelectedRow else { return }
-//
-//        if let photo = friendsList[selectedRow.row].photo {
-//            userVC.userPhoto = photo
-//        }
+        guard let userVC = segue.destination as? UserController else { return }
+        guard let selectedRow = tableView.indexPathForSelectedRow else { return }
+        
+        userVC.userID = 1
     }
-    
-
 }
 
 

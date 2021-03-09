@@ -12,12 +12,12 @@ class FindGroupsController: UITableViewController {
     @IBOutlet var searchBar: UISearchBar?
     
     var groupsArr: [Group] = [
-        Group(name: "Актёрское мастерство", image: "acting"),
-        Group(name: "Уроки игры на гитаре", image: "guitar"),
-        Group(name: "Мода", image: "fashion"),
-        Group(name: "Палеонтология", image: "paleontology"),
-        Group(name: "Мужская кухня", image: "cooking"),
-        Group(name: "Реклама и маркетинг", image: "marketing"),
+//        Group(name: "Актёрское мастерство", image: "acting"),
+//        Group(name: "Уроки игры на гитаре", image: "guitar"),
+//        Group(name: "Мода", image: "fashion"),
+//        Group(name: "Палеонтология", image: "paleontology"),
+//        Group(name: "Мужская кухня", image: "cooking"),
+//        Group(name: "Реклама и маркетинг", image: "marketing"),
     ]
     var groups: [Group] = []
     

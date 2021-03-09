@@ -9,13 +9,35 @@ import UIKit
 
 class UserController: UICollectionViewController {
     
+    var userID: Int = 0
     private let reuseIdentifier = "userCell"
-    private var photos = ["Joey", "Rachel", "Monica", "Chandler", "Ross", "Phoebe"]
+    private var photos: [String] = []
     private lazy var transitioningAnimator = GalleryTransitionAnimatorDelegateImp()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photos.shuffle()
+        
+        UserService.getAllPhotos(userID: self.userID) { (result, error) in
+            if let error = error {
+                print(error)
+                let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            
+            if let data = result?.response.items {
+                for row in data {
+                    self.photos.append(row.sizes[4].url)
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -33,7 +55,13 @@ class UserController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         guard let userCell = cell as? UserCell else { return cell }
         
-        userCell.photo?.image = UIImage(named: photos[indexPath.row])
+        if let url = URL(string: photos[indexPath.row]) {
+            if let imgData = try? Data(contentsOf: url) {
+                userCell.photo?.image = UIImage(data: imgData)
+            }
+        }
+        
+//        userCell.photo?.image = UIImage(named: photos[indexPath.row])
         userCell.photo?.isUserInteractionEnabled = true
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(showGallery(_:)))
@@ -68,7 +96,10 @@ class UserController: UICollectionViewController {
         
         for (i, imgName) in photos.enumerated() {
             
-            if let image = UIImage(named: imgName) {
+            guard let url = URL(string: imgName) else { continue }
+            guard let imgData = try? Data(contentsOf: url) else { continue }
+            
+            if let image = UIImage(data: imgData) {
                 galleryVC.images.append(image)
                 
                 if image == UserVC.photo?.image {
@@ -78,10 +109,10 @@ class UserController: UICollectionViewController {
         }
         
 //        galleryVC.modalPresentationStyle = .custom
-        let recognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
-        recognizer.edges = [.top]
-        galleryVC.view.addGestureRecognizer(recognizer)
-        galleryVC.transitioningDelegate = transitioningAnimator
+//        let recognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
+//        recognizer.edges = [.top]
+//        galleryVC.view.addGestureRecognizer(recognizer)
+//        galleryVC.transitioningDelegate = transitioningAnimator
         
         present(galleryVC, animated: true, completion: nil)
 //        navigationController?.pushViewController(galleryVC, animated: true)
