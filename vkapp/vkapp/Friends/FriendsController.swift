@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class FriendsController: UITableViewController {
 
@@ -37,7 +38,7 @@ class FriendsController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
             }
             
-            if let users = result?.response.items {
+            if let users = result?.response!.items {
                 for user in users {
                     let userName = "\(user.firstName) \(user.lastName)"
                     let userRow = User(id: user.id, name: userName, photoUrl: user.photo)

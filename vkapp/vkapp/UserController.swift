@@ -34,7 +34,7 @@ class UserController: UICollectionViewController {
             }
             
             
-            if let data = result?.response.items {
+            if let data = result?.response!.items {
                 for row in data {
                     let item = PhotoStreamItem(url: row.sizes[4].url)
                     self.photos.append(item)

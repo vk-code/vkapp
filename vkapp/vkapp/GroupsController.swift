@@ -26,7 +26,7 @@ class GroupsController: UITableViewController {
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
             }
-            if let result = result?.response.items {
+            if let result = result?.response!.items {
                 for row in result {
                     let groupRow = Group(name: row.name, imageUrl: row.photo)
                     self.userGroups.append(groupRow)

@@ -6,21 +6,22 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct UserModel: Codable {
-    let response: UserModelResponse
+class UserModel: Object, Codable {
+    var response: UserModelResponse?
 }
 
-struct UserModelResponse: Codable {
-    let count: Int
-    let items: [UserPhotosModel]
+class UserModelResponse: Object, Codable {
+    @objc dynamic var count: Int = 0
+    var items = RealmSwift.List<UserPhotosModel>()
 }
 
-struct UserPhotosModel: Codable {
-    let id: Int
-    let sizes: [UserSinglePhotoModel]
+class UserPhotosModel: Object, Codable {
+    @objc dynamic var id: Int = 0
+    var sizes = RealmSwift.List<UserSinglePhotoModel>()
 }
 
-struct UserSinglePhotoModel: Codable {
-    let url: String
+class UserSinglePhotoModel: Object, Codable {
+    @objc dynamic var url: String = ""
 }

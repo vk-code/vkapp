@@ -7,5 +7,5 @@ target 'vkapp' do
 
   # Pods for vkapp
 pod 'Alamofire', '~> 5.2'
-
+pod 'RealmSwift'
 end

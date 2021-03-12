@@ -6,21 +6,22 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct FriendsModel: Codable {
-    let response: FriendsModelResponse
+class FriendsModel: Object, Codable {
+    @objc dynamic var response: FriendsModelResponse?
 }
 
-struct FriendsModelResponse: Codable {
-    let count: Int
-    let items: [FriendsModelItems]
+class FriendsModelResponse: Object, Codable {
+    @objc dynamic var count: Int = 0
+    var items = RealmSwift.List<FriendsModelItems>()
 }
 
-struct FriendsModelItems: Codable {
-    let id: Int
-    let firstName: String
-    let lastName: String
-    let photo: String
+class FriendsModelItems: Object, Codable {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var firstName: String = ""
+    @objc dynamic var lastName: String = ""
+    @objc dynamic var photo: String = ""
     
     enum CodingKeys: String, CodingKey {
         case id
