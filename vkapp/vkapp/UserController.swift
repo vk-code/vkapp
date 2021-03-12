@@ -7,11 +7,18 @@
 
 import UIKit
 
+struct PhotoStreamItem {
+    let url: String
+    var imageData: Data?
+    var likesCount: Int = 0
+}
+
 class UserController: UICollectionViewController {
     
     var userID: Int = 0
     private let reuseIdentifier = "userCell"
-    private var photos: [String] = []
+//    private var photos: [String] = []
+    private var photos: [PhotoStreamItem] = []
     private lazy var transitioningAnimator = GalleryTransitionAnimatorDelegateImp()
     
     override func viewDidLoad() {
@@ -19,7 +26,6 @@ class UserController: UICollectionViewController {
         
         UserService.getAllPhotos(userID: self.userID) { (result, error) in
             if let error = error {
-                print(error)
                 let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .alert)
                 let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
 
@@ -30,7 +36,9 @@ class UserController: UICollectionViewController {
             
             if let data = result?.response.items {
                 for row in data {
-                    self.photos.append(row.sizes[4].url)
+                    let item = PhotoStreamItem(url: row.sizes[4].url)
+                    self.photos.append(item)
+//                    self.photos.append(row.sizes[4].url)
                 }
                 
                 DispatchQueue.main.async {
@@ -55,23 +63,26 @@ class UserController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         guard let userCell = cell as? UserCell else { return cell }
         
-        if let url = URL(string: photos[indexPath.row]) {
+        userCell.configure(likes: photos[indexPath.row].likesCount)
+        
+        if let loadedImgdata = photos[indexPath.row].imageData {
+            userCell.photo?.image = UIImage(data: loadedImgdata)
+        }
+        else if let url = URL(string: photos[indexPath.row].url) {
             if let imgData = try? Data(contentsOf: url) {
+                photos[indexPath.row].imageData = imgData
                 userCell.photo?.image = UIImage(data: imgData)
             }
         }
-        
 //        userCell.photo?.image = UIImage(named: photos[indexPath.row])
         userCell.photo?.isUserInteractionEnabled = true
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(showGallery(_:)))
         userCell.addGestureRecognizer(recognizer)
-        
-        // MARK: TO DO
-        // для каждой ячейки нужно запоминать, нажат ли на ней лайк и в cellForItemAt выставлять этому контролу запомненное состояние
-        
+
         return userCell
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
@@ -90,23 +101,42 @@ class UserController: UICollectionViewController {
     
     @objc func showGallery(_ recognizer: UITapGestureRecognizer) {
         
-        guard let UserVC = recognizer.view as? UserCell else { return }
+//        guard let UserVC = recognizer.view as? UserCell else { return }
         
         let galleryVC = ImageGalleryViewController()
         
-        for (i, imgName) in photos.enumerated() {
+        for (i, img) in photos.enumerated() {
             
-            guard let url = URL(string: imgName) else { continue }
-            guard let imgData = try? Data(contentsOf: url) else { continue }
-            
-            if let image = UIImage(data: imgData) {
+            if let imageData = img.imageData, let image = UIImage(data: imageData) {
                 galleryVC.images.append(image)
+            }
+            else {
+                guard let url = URL(string: img.url) else { continue }
+                guard let imgData = try? Data(contentsOf: url) else { continue }
                 
-                if image == UserVC.photo?.image {
-                    galleryVC.currentImage = i
+                if let image = UIImage(data: imgData) {
+                    galleryVC.images.append(image)
+                    
+//                    if image == UserVC.photo?.image {
+//                        galleryVC.currentImage = i
+//                    }
                 }
             }
         }
+        
+//        for (i, imgName) in photos.enumerated() {
+//
+//            guard let url = URL(string: imgName) else { continue }
+//            guard let imgData = try? Data(contentsOf: url) else { continue }
+//
+//            if let image = UIImage(data: imgData) {
+//                galleryVC.images.append(image)
+//
+//                if image == UserVC.photo?.image {
+//                    galleryVC.currentImage = i
+//                }
+//            }
+//        }
         
 //        galleryVC.modalPresentationStyle = .custom
 //        let recognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))

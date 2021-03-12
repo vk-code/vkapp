@@ -18,6 +18,7 @@ import UIKit
             self.sendActions(for: .valueChanged)
         }
     }
+    let likeBtn = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +33,6 @@ import UIKit
     
     func setupView() {
         
-        let likeBtn = UIButton()
         likeBtn.imageView?.tintColor = .gray
         likeBtn.imageView?.contentMode = .scaleAspectFit
         likeBtn.setImage(UIImage(systemName: "heart"), for: .normal)
